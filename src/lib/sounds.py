@@ -3,11 +3,11 @@ import sys
 import time
 import pygame
 from pygame.locals import *
-PACKAGE_PARENT = '..\..'
+PACKAGE_PARENT = '../..'
 SCRIPT_DIR = os.path.dirname(__file__)                                # Diretório atual
 MAIN_DIR = os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)) # Diretório do jogo
 sys.path.append(MAIN_DIR)                                             # Adição do diretório do jogo
-SOUNDS_LOCAL = 'res\sounds'
+SOUNDS_LOCAL = 'res/sounds'
 VOLUME_BGM = 0.6
 VOLUME_FX = 0.8
 

@@ -36,9 +36,14 @@ from src.lib.sounds import (
 SCREEN_WIDTH, SCREEN_HEIGHT = (1366, 768)                            # Comprimento e altura da tela
 SCREEN_DIMENSION = (SCREEN_WIDTH, SCREEN_HEIGHT)                     # Dimensão da tela
 BACKGROUND_COLOR = (8, 17, 26)                                       # Cor do fundo
-ICON_FILE = os.path.join(MAIN_DIR, 'res\images\icons', 'icon.png')   # Local do ícone
-SPLASH_SCREEN = os.path.join(MAIN_DIR, 'res\images\messages', 'splash.png') # Local da tela de abertura
+ICON_FILE = os.path.join(MAIN_DIR, 'res/images/icons', 'icon.png')   # Local do ícone
+SPLASH_SCREEN = os.path.join(MAIN_DIR, 'res/images/messages', 'splash.png') # Local da tela de abertura
 FPS = 30                                                             # Valor do FRAMERATE
+NEBULA = os.path.join(MAIN_DIR, 'res/images/assets', 'nebula.png')
+PLANETS = os.path.join(MAIN_DIR, 'res/images/assets', 'planets.png')
+BLACK_HOLE = os.path.join(MAIN_DIR, 'res/images/assets', 'black-hole.png')
+START_POS = 1366
+ACCELERATION = 0.05
 
 
 
@@ -56,9 +61,22 @@ def main():
             play_fx('start')                                         # Executa o efeito sonoro de inicio
             stop_bgm(1500)                                           # Para a execução da música título
         setup_environment()                                          # Reinicia as variaveis do jogo
+        image1 = pygame.transform.scale(pygame.image.load(PLANETS).convert_alpha(), (1024, 768))
+        image2 = pygame.transform.scale(pygame.image.load(BLACK_HOLE).convert_alpha(), (395,360))
+        image3 = pygame.transform.scale(pygame.image.load(NEBULA).convert_alpha(), (450, 450))
+        image1_pos_x = START_POS + 0
+        image2_pos_x = START_POS + 1500
+        image3_pos_x = START_POS + 2200
         while running:                                               # Loop de execução do jogo
+            play_bgm('one', loop = True)
             pygame.Surface.fill(screen, BACKGROUND_COLOR)            # Preenche o fundo com uma cor
-            handle(escape = True, pause = True, enter = False)       # Trata os eventos do jogo
+            image1_pos_x -= ACCELERATION
+            image2_pos_x -= ACCELERATION
+            image3_pos_x -= ACCELERATION
+            screen.blit(image1, (image1_pos_x,-20))
+            screen.blit(image2, (image2_pos_x,10))
+            screen.blit(image3, (image3_pos_x,330))
+            handle(escape = False, pause = True, enter = False)       # Trata os eventos do jogo
             controls()                                               # Trata os controles do jogo
             pygame.display.update()                                  # Atualização de tela
 
