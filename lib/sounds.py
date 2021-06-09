@@ -3,36 +3,36 @@ import sys
 import time
 import pygame
 from pygame.locals import *
-PACKAGE_PARENT = '../..'
+PACKAGE_PARENT = '..'
 SCRIPT_DIR = os.path.dirname(__file__)                                # Diretório atual
 MAIN_DIR = os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)) # Diretório do jogo
 sys.path.append(MAIN_DIR)                                             # Adição do diretório do jogo
-SOUNDS_LOCAL = 'res/sounds'
+SOUNDS_LOCAL = 'res\\sounds'
 VOLUME_BGM = 0.6
 VOLUME_FX = 0.8
 
 BGM = {
-    'main': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'main-title.mid'),
-    'one': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-1.mid'),
-    'two': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-2.mid'),
-    'three': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-3.mid'),
-    'four': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-4.mid'),
-    'five': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-5.mid'),
-    'six': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-6.mid'),
-    'seven': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-7.mid'),
-    'eight': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-8.mid'),
-    'clear': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-clear_NOLOOP.mid'),
-    'boss': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'boss.mid'),
-    'end': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'ending.mid'),
-    'death': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'game-over_NOLOOP.mid')
+    'main': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'main-title.mid')),
+    'lvl1': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-1.mid')),
+    'lvl2': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-2.mid')),
+    'lvl3': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-3.mid')),
+    'lvl4': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-4.mid')),
+    'lvl5': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-5.mid')),
+    'lvl6': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-6.mid')),
+    'lvl7': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-7.mid')),
+    'lvl8': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-8.mid')),
+    'clear': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'stage-clear_NOLOOP.mid')),
+    'boss': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'boss.mid')),
+    'end': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'ending.mid')),
+    'death': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'bgm', 'game-over_NOLOOP.mid'))
 }
 
 extension = 'wav' if 'win' in sys.platform else 'ogg'           # Decisão do tipo de áudio
 FX = {
-    'start': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'fx', f'start.{extension}'),
-    'laser': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'fx', f'laser.{extension}'),
-    'death': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'fx', f'death.{extension}'),
-    'explosion': os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'fx', f'explosion.{extension}')
+    'start': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'fx', f'start.{extension}')),
+    'laser': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'fx', f'laser.{extension}')),
+    'death': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'fx', f'death.{extension}')),
+    'explosion': os.path.normpath(os.path.join(MAIN_DIR, SOUNDS_LOCAL, 'fx', f'explosion.{extension}'))
 }
 
 def wait(delay):

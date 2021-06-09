@@ -16,11 +16,22 @@ BEGIN = False
 
 
 
-def init_game():
+def init_libs(quality):
     '''Função que inicializa as bibliotecas do jogo'''
+    if quality == 'high':                                            # Decisão da qualidade de som
+        buf = 2048                                                   # Alta qualidade
+    elif quality == 'mid':
+        buf = 1024                                                   # Qualidade média
+    else:
+        buf = 512                                                    # Qualidade baixa
     pygame.init()
     pygame.display.init()
-    pygame.mixer.pre_init(frequency = 44100, size = 16, channels = 1, buffer = 512)
+    pygame.mixer.pre_init(
+        frequency = 44100,
+        size = 16,
+        channels = 1,
+        buffer = buf
+    )
     pygame.key.set_repeat()
 def begin_game():
     '''Função que sinaliza o início do jogo e a saída da tela de abertura'''
