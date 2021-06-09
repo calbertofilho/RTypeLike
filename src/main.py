@@ -81,7 +81,7 @@ def main():
             screen.blit(image1, (image1_pos_x,-20))
             screen.blit(image2, (image2_pos_x,10))
             screen.blit(image3, (image3_pos_x,330))
-            handle(escape = False, pause = True, enter = False)       # Trata os eventos do jogo
+            handle(escape = False, pause = True, enter = False)      # Trata os eventos do jogo
             controls()                                               # Trata os controles do jogo
             pygame.display.update()                                  # Atualização de tela
 
