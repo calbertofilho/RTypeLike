@@ -40,12 +40,12 @@ from classes.test import (
 SCREEN_WIDTH, SCREEN_HEIGHT = (1366, 768)                            # Comprimento e altura da tela
 SCREEN_DIMENSION = (SCREEN_WIDTH, SCREEN_HEIGHT)                     # Dimensão da tela
 BACKGROUND_COLOR = (8, 17, 26)                                       # Cor do fundo
-ICON_FILE = os.path.normpath(os.path.join(MAIN_DIR, 'res\\images\\icons', 'icon.png'))   # Local do ícone
-SPLASH_SCREEN = os.path.normpath(os.path.join(MAIN_DIR, 'res\\images\\messages', 'splash.png')) # Local da tela de abertura
+ICON_FILE = os.path.normpath(os.path.join(MAIN_DIR, 'res/images/icons', 'icon.png'))   # Local do ícone
+SPLASH_SCREEN = os.path.normpath(os.path.join(MAIN_DIR, 'res/images/messages', 'splash.png')) # Local da tela de abertura
 FPS = 30                                                             # Valor do FRAMERATE
-NEBULA = os.path.normpath(os.path.join(MAIN_DIR, 'res\\images\\assets', 'nebula.png'))
-PLANETS = os.path.normpath(os.path.join(MAIN_DIR, 'res\\images\\assets', 'planets.png'))
-BLACK_HOLE = os.path.normpath(os.path.join(MAIN_DIR, 'res\\images\\assets', 'black-hole.png'))
+NEBULA = os.path.normpath(os.path.join(MAIN_DIR, 'res/images/assets', 'nebula.png'))
+PLANETS = os.path.normpath(os.path.join(MAIN_DIR, 'res/images/assets', 'planets.png'))
+BLACK_HOLE = os.path.normpath(os.path.join(MAIN_DIR, 'res/images/assets', 'black-hole.png'))
 START_POS = 1366
 ACCELERATION, ACCELERATION_STARS = (0.02, 0.05)
 
@@ -86,7 +86,7 @@ def main():
             pygame.display.update()                                  # Atualização de tela
 
 
-
+main()
 try:
     if __name__ == "__main__":
         main()
